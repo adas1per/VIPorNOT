@@ -1,0 +1,20 @@
+name: VIPorNOT
+version: git
+summary: A program for serving hotel guests
+description: |
+  .
+base: core18
+confinement: devmode
+
+
+parts:
+  test-offlineimap:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+      - python-six
+
+apps:
+  vipornot:
+    command: bin/vipornot
